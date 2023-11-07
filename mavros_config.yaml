@@ -1,0 +1,34 @@
+/mavros/**:
+  ros__parameters:
+    startup_px4_usb_quirk: false
+
+/mavros_node/**: 
+  ros__parameters: 
+    fcu_url: "tcp://127.0.0.1:5760"
+
+/mavros/**:
+  ros__parameters:
+    plugin_denylist:
+      # common
+      - actuator_control
+      - ftp
+      - hil
+      # extras
+      - altitude
+      - debug_value
+      - image_pub
+      - px4flow
+      - vibration
+      - vision_speed_estimate
+      - wheel_odometry
+
+# sys_status & sys_time connection options
+/mavros/**/conn:
+  ros__parameters:
+    heartbeat_rate: 1.0    # send heartbeat rate in Hertz
+    heartbeat_mav_type: "ONBOARD_CONTROLLER"
+    timeout: 10.0          # heartbeat timeout in seconds
+    timesync_rate: 10.0    # TIMESYNC rate in Hertz (feature disabled if 0.0)
+    system_time_rate: 1.0  # send system time to FCU rate in Hertz (disabled if 0.0)
+
+
