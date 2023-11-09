@@ -8,12 +8,14 @@ services:
     container_name: mavros_test_sitl
     network_mode: host
 
-  mavros_test_mavros_node:
+  mavros:
     build:
       context: .
       dockerfile: docker/mavros.dockerfile
     container_name: mavros_test_mavros_node
     network_mode: host
-    command: ["ros2", "run", "mavros", "mavros_node", "--ros-args", "--params-file", "mavros_config.yaml"]
+    command: 'bash'
+    # command: ["ros2", "run", "mavros", "mavros_node", "--ros-args", "--params-file", "mavros/mavros/launch/apm_config.yaml"]
     volumes:
       - .:/user/mavros_test/
+    tty: true

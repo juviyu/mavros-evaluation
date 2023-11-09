@@ -7,6 +7,14 @@
 
 # --- system plugins ---
 
+/mavros_node/**: 
+  ros__parameters: 
+    fcu_url: "tcp://127.0.0.1:5760"
+    tgt_system: 1
+    tgt_component: 1
+    fcu_protocol: "v1.0"
+    gcs_url: ""
+
 # sys_status & sys_time connection options
 /mavros/**/conn:
   ros__parameters:

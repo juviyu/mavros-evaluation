@@ -1,3 +1,6 @@
 [submodule "mavros"]
 	path = mavros
 	url = https://github.com/mavlink/mavros.git
+[submodule "src/mavlink"]
+	path = src/mavlink
+	url = https://github.com/mavlink/mavlink.git
