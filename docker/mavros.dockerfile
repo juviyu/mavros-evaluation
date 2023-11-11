@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && apt-get install -y \
     python3-osrf-pycommon \
     python3-pip \
-    rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 ENV DEBIAN_FRONTEND=
 
 USER non-root-user
